@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+
+<script>
+var url = location.href;
+
+getSearch = url.split("?")	
+arr_msg = getSearch[1].split("=")
+message=arr_msg[1];
+message=decodeURI(message);
+
+$.post('https://script.google.com/macros/s/AKfycbxnZ6aqviRII0DBBYDSsNbUM-U0ThZxbjEjoSEvG3izmWbCIs8/exec',
+    {msg:message},
+    function(e){
+        console.log(e);
+});
+</script>
+</head>
+<body>
+Done
+</body>
+</html>
